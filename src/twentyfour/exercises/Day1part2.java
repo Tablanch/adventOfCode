@@ -7,15 +7,22 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * Autori:
+ *  - tablanch
+ *  - sisyphus
+ *  Fonte:
  * <a href="https://adventofcode.com/2024/day/1#part2">Advent of Code 2024 - Day 1, Part 2</a>
+ *
+ * @author tablanch
+ * @author sisyphus
  */
-public class Day1Part2 {
+public class Day1part2 {
 
     public static void main(String[] args) throws IOException {
             try {
-                InputStream inputStream = Day1Part1.class.getResourceAsStream("/twentyfour/inputfiles/alvisegenerated/input1p2.txt");
+                InputStream inputStream = Day1part2.class.getResourceAsStream("/twentyfour/inputfiles/input1.txt");
                 if (inputStream == null) {
-                    throw new FileNotFoundException("File not found: /twentyfour/inputfiles/alvisegenerated/input1p2.txt");
+                    throw new FileNotFoundException("File not found: /twentyfour/inputfiles/input1.txt");
                 }
                 BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
                 String st;
