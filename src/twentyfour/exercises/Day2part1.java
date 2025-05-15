@@ -3,15 +3,22 @@ package twentyfour.exercises;
 import java.io.*;
 
 /**
+ * Autori:
+ *  - tablanch
+ *  - sisyphus
+ *  Fonte:
  * <a href="https://adventofcode.com/2024/day/2#part1">Advent of Code 2024 - Day 2, Part 1</a>
+ *
+ * @author tablanch
+ * @author sisyphus
  */
-public class Day2Part1 {
+public class Day2part1 {
 
     public static void main(String[] args) throws IOException {
             try {
-                InputStream inputStream = Day1Part1.class.getResourceAsStream("/twentyfour/inputfiles/alvisegenerated/input2p1.txt");
+                InputStream inputStream = Day2part1.class.getResourceAsStream("/twentyfour/inputfiles/input2.txt");
                 if (inputStream == null) {
-                    throw new FileNotFoundException("File not found: /twentyfour/inputfiles/alvisegenerated/input2p1.txt");
+                    throw new FileNotFoundException("File not found: /twentyfour/inputfiles/input2.txt");
                 }
                 BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
                 String st;
