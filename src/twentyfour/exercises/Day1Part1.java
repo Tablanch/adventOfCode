@@ -1,19 +1,22 @@
+package twentyfour.exercises;
+
 import java.io.*;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class First {
+/**
+ * <a href="https://adventofcode.com/2024/day/1">Advent of Code 2024 - Day 1, Part 1</a>
+ */
+public class Day1Part1 {
     public static void main(String[] args) throws IOException {
 
         try {
-
-            URL path = First.class.getResource("input1.txt");
-            File file = new File("input1.txt");
-            if (path != null)
-                file = new File(path.getFile());
-            BufferedReader br = new BufferedReader(new FileReader(file));
+            InputStream inputStream = Day1Part1.class.getResourceAsStream("/twentyfour/inputfiles/alvisegenerated/input1p1.txt");
+            if (inputStream == null) {
+                throw new FileNotFoundException("File not found: /twentyfour/inputfiles/alvisegenerated/input1p1.txt");
+            }
+            BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
             String st;
             List<Integer> firstGroup = new ArrayList<>();
             List<Integer> secondGroup = new ArrayList<>();

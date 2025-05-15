@@ -1,15 +1,19 @@
-import java.io.*;
-import java.net.URL;
+package twentyfour.exercises;
 
-public class Second {
+import java.io.*;
+
+/**
+ * <a href="https://adventofcode.com/2024/day/2">Advent of Code 2024 - Day 2, Part 1</a>
+ */
+public class Day2Part1 {
 
     public static void main(String[] args) throws IOException {
             try {
-                URL path = First.class.getResource("input2.txt");
-                File file = new File("input2.txt");
-                if (path != null)
-                    file = new File(path.getFile());
-                BufferedReader br = new BufferedReader(new FileReader(file));
+                InputStream inputStream = Day1Part1.class.getResourceAsStream("/twentyfour/inputfiles/alvisegenerated/input2p1.txt");
+                if (inputStream == null) {
+                    throw new FileNotFoundException("File not found: /twentyfour/inputfiles/alvisegenerated/input2p1.txt");
+                }
+                BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
                 String st;
                 int total = 0;
                 OUTER_LOOP: while ((st = br.readLine()) != null) {
@@ -17,11 +21,15 @@ public class Second {
                     String[] arr = st.split("\\s+");
                     boolean increasing = true;
                     for(int i = 0, j = i+1; i < arr.length - 1; i++, j++) {
+
                         int intI= Integer.parseInt(arr[i]);
                         int intJ = Integer.parseInt(arr[j]);
-                        if(i == 0)
-                            increasing = intI-intJ < 0;
-                        if(Math.abs(intI-intJ) > 3 || Math.abs(intI-intJ) < 1 || ((intI - intJ) < 0) != increasing) {
+                        boolean currentIncreasing = intJ > intI;
+
+                        if(i == 0){
+                            increasing = intJ > intI;
+                        }
+                        if(Math.abs(intI-intJ) < 1 || Math.abs(intI-intJ) > 3 || currentIncreasing != increasing) {
                             continue OUTER_LOOP;
                         }
                     }
