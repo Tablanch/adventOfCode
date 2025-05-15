@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * <a href="https://adventofcode.com/2024/day/1">Advent of Code 2024 - Day 1, Part 1</a>
+ * <a href="https://adventofcode.com/2024/day/1#part1">Advent of Code 2024 - Day 1, Part 1</a>
  */
 public class Day1Part1 {
     public static void main(String[] args) throws IOException {

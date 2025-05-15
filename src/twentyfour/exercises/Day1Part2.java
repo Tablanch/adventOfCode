@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * <a href="https://adventofcode.com/2024/day/1">Advent of Code 2024 - Day 1, Part 2</a>
+ * <a href="https://adventofcode.com/2024/day/1#part2">Advent of Code 2024 - Day 1, Part 2</a>
  */
 public class Day1Part2 {
 

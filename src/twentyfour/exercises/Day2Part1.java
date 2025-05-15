@@ -3,7 +3,7 @@ package twentyfour.exercises;
 import java.io.*;
 
 /**
- * <a href="https://adventofcode.com/2024/day/2">Advent of Code 2024 - Day 2, Part 1</a>
+ * <a href="https://adventofcode.com/2024/day/2#part1">Advent of Code 2024 - Day 2, Part 1</a>
  */
 public class Day2Part1 {
 
