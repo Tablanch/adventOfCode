@@ -25,6 +25,7 @@ public class Day3part2 {
             Pattern mulPattern = Pattern.compile(mulRegex);
             Pattern doPattern = Pattern.compile(doRegex);
             Pattern dontPattern = Pattern.compile(dontRegex);
+            boolean enabled = true;
 
             while ((line = br.readLine()) != null) {
                 List<Instruction> instructions = new ArrayList<>();
@@ -47,22 +48,27 @@ public class Day3part2 {
                 // Ordina per posizione nel testo
                 instructions.sort(Comparator.comparingInt(i -> i.position));
 
-                // Ora esegui
-                boolean enabled = true;
                 for (Instruction instr : instructions) {
                     switch (instr.type) {
                         case "do":
                             enabled = true;
+                            System.out.println(">> Trovato do() → mul ABILITATI");
                             break;
                         case "don't":
                             enabled = false;
+                            System.out.println(">> Trovato don't() → mul DISABILITATI");
                             break;
                         case "mul":
+                            String[] parts = instr.content.substring(4, instr.content.length() - 1).split(",");
+                            int x = Integer.parseInt(parts[0]);
+                            int y = Integer.parseInt(parts[1]);
+                            int result = x * y;
+
                             if (enabled) {
-                                String[] parts = instr.content.substring(4, instr.content.length() - 1).split(",");
-                                int x = Integer.parseInt(parts[0]);
-                                int y = Integer.parseInt(parts[1]);
-                                sum += x * y;
+                                sum += result;
+                                System.out.println("✔ Eseguito: " + instr.content + " → " + x + " * " + y + " = " + result);
+                            } else {
+                                System.out.println("✘ Ignorato: " + instr.content + " → stato = DISABILITATO");
                             }
                             break;
                     }
